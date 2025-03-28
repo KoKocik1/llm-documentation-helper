@@ -9,6 +9,7 @@ langchain-community = "*"
 langchain-pinecone = "*"
 langchain-openai = "*"
 beautifulsoup4 = "*"
+streamlit = "*"
 
 [dev-packages]
 
