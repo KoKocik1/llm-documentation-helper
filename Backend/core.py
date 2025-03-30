@@ -31,10 +31,7 @@ def run_llm(query, chat_history: List[Dict[str, Any]]):
 
     # Retrieval QA Chat
     retrieval_qa_chat_prompt = hub.pull(LANGCHAIN_HUB)
-    stuff_documents_chain = create_stuff_documents_chain(
-        chat,
-        retrieval_qa_chat_prompt
-    )
+    stuff_documents_chain = create_stuff_documents_chain(chat, retrieval_qa_chat_prompt)
 
     qa = create_retrieval_chain(
         retriever=history_aware_retriever,
