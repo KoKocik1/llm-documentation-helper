@@ -10,6 +10,7 @@ langchain-pinecone = "*"
 langchain-openai = "*"
 beautifulsoup4 = "*"
 streamlit = "*"
+firecrawl-py = "*"
 
 [dev-packages]
 

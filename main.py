@@ -16,6 +16,23 @@ def initialize_session_state():
 
 
 def main():
+    with st.sidebar:
+        st.title("User Profile")
+        st.image(
+            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+            width=150,
+        )
+
+        st.markdown("### User Information")
+        st.text_input("Name", value="John Doe", disabled=True)
+        st.text_input("Email", value="john.doe@example.com", disabled=True)
+
+        st.markdown("---")
+
+        st.markdown("### App Information")
+        st.markdown("**Version:** 1.0.0")
+        st.markdown("**Last Updated:** 2024")
+
     st.header("LangChain Documentation Helper")
     initialize_session_state()
 
@@ -32,7 +49,8 @@ def main():
             generated_response = run_llm(
                 query=prompt, chat_history=st.session_state.chat_history
             )
-            formatted_response, sources = get_formatted_response(generated_response)
+            formatted_response, sources = get_formatted_response(
+                generated_response)
 
             # Update session state
             st.session_state.user_prompt_history.append(prompt)
